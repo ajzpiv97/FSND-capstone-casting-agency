@@ -130,11 +130,11 @@ ALTER TABLE ONLY public.movies ALTER COLUMN id SET DEFAULT nextval('public.movie
 --
 
 COPY public.actors (id, name, age, gender, movie_id) FROM stdin;
-1	Tom Hanks	64	M	2
-2	Brad Pitt	56	M	3
+1	Tom Hanks	64	M	1
+2	Brad Pitt	56	M	2
 3	Scarlett Johansson	35	F	3
-4	Robert Downey, Jr.	55	M	2
-5	Julia Roberts	52	F	2
+4	Sebastian Stan	38	M	4
+5	Julia Roberts	52	F	5
 \.
 
 
