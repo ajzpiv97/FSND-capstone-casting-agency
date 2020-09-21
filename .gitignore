@@ -2,3 +2,16 @@ __pycache__*
 venv
 .vscode
 .idea
+templates
+static
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
