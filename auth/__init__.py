@@ -9,6 +9,7 @@ AUTH0_DOMAIN = environ.get('AUTH0_DOMAIN')
 ALGORITHMS = ['RS256']
 API_AUDIENCE = environ.get('API_AUDIENCE')
 
+# https://dev-6jw0w2cu.us.auth0.com/authorize?audience=casting-agency&response_type=token&client_id=bITJGKQELPTHSveSDuMgtInr47AJ2vt5&redirect_uri=http://localhost:8100/login-results
 
 # AuthError Exception
 '''
