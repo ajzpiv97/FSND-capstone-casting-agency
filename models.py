@@ -1,13 +1,10 @@
-import os
 from sqlalchemy import ForeignKey, Column, String, Integer, \
     DateTime, create_engine
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
-import json
 import os
 from flask_migrate import Migrate
 
-database_name = "casting"
 database_path = os.environ['DATABASE_URL']
 db = SQLAlchemy()
 
@@ -36,7 +33,7 @@ class Movies(db.Model):
     id = Column(Integer, primary_key=True)
     title = Column(String)
     release_date = Column(DateTime)
-    actors = relationship('Actor', backref="movie", lazy=True)
+    actors = relationship('Actors', backref="movies", lazy=True)
 
     def insert(self):
         db.session.add(self)
