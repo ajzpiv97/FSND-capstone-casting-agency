@@ -1,0 +1,1038 @@
+{
+	"id": "61e46c50-bdbb-425f-8a3e-2188b9a3ba1f",
+	"name": "casting-agency",
+	"timestamp": "2020-09-21T22:20:57.717Z",
+	"collection_id": "3795a481-2302-4fc3-9dab-7d1f8cd8477d",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 45,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "531670de-22a7-4419-b83d-849b750ae7a9",
+			"name": "/movies",
+			"url": "http://localhost:5000/movies",
+			"time": 314,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movies array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movies array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				314
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movies array": true
+				}
+			]
+		},
+		{
+			"id": "df3f29c1-2161-42c4-b292-30087d5f3da8",
+			"name": "/actors",
+			"url": "http://localhost:5000/actors",
+			"time": 194,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actors array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actors array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				194
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actors array": true
+				}
+			]
+		},
+		{
+			"id": "c936a5cc-9384-4006-8d8f-74f71df78ca7",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/1",
+			"time": 202,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movie object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movie object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movie object": true
+				}
+			]
+		},
+		{
+			"id": "107ebf74-7cea-4e7e-bd2d-c5665b2a4aa7",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/1",
+			"time": 206,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actor object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actor object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				206
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actor object": true
+				}
+			]
+		},
+		{
+			"id": "081540a8-40ec-400b-beea-b6e25b9ab0ba",
+			"name": "/movies",
+			"url": "http://localhost:5000/movies",
+			"time": 210,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				210
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "e73f9717-b18d-405d-ba06-ee924b19a552",
+			"name": "/actors",
+			"url": "http://localhost:5000/actors",
+			"time": 191,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "968b1f4a-10fb-454b-b865-e0358590e417",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/6",
+			"time": 199,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "0117da50-b094-4652-87d6-9af6fbea8e26",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/6",
+			"time": 193,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "af53ed1a-b73c-4491-a26b-c414308aae62",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/1",
+			"time": 202,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "6259d967-04f6-4016-a6c6-a94e6895e69c",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/1",
+			"time": 200,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				200
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "5289be63-a0be-493a-b109-f5564d59b7c7",
+			"name": "/movies",
+			"url": "http://localhost:5000/movies",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movies array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movies array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movies array": true
+				}
+			]
+		},
+		{
+			"id": "a7ebc1ce-cb6c-4a2d-8405-7ca5b5d0efe4",
+			"name": "/actors",
+			"url": "http://localhost:5000/actors",
+			"time": 207,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actors array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actors array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				207
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actors array": true
+				}
+			]
+		},
+		{
+			"id": "08322625-30f2-4ae9-b637-09c56795f908",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/1",
+			"time": 430,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actor object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actor object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				430
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actor object": true
+				}
+			]
+		},
+		{
+			"id": "baebdfcf-72df-404c-a5cc-49da6670b6f8",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/1",
+			"time": 198,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movie object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movie object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				198
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movie object": true
+				}
+			]
+		},
+		{
+			"id": "a63c642d-c0b5-4ddc-b3ab-c07b0a97c45e",
+			"name": "/movies",
+			"url": "http://localhost:5000/movies",
+			"time": 191,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "b8a7b583-13d4-44cc-840a-0f3c8bab5e78",
+			"name": "/actors",
+			"url": "http://localhost:5000/actors",
+			"time": 218,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				218
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "7e7460d3-3916-4391-87ab-da4454fedcd7",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/6",
+			"time": 195,
+			"responseCode": {
+				"code": 404,
+				"name": "NOT FOUND"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				195
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "05e7c33e-21c3-4795-9481-342f59d78b6e",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/5",
+			"time": 207,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains acotr array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains acotr array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				207
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains acotr array": true
+				}
+			]
+		},
+		{
+			"id": "64d376e0-c17f-4827-abe3-f02762bdd262",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/6",
+			"time": 193,
+			"responseCode": {
+				"code": 403,
+				"name": "FORBIDDEN"
+			},
+			"tests": {
+				"Status code is 403": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Status code is 403": true
+				}
+			]
+		},
+		{
+			"id": "7d3fe3e5-454a-4eb9-b9dc-31b9f4312f50",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/6",
+			"time": 196,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				196
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6d2ca6c1-3a42-4124-a0bf-8bfab9caebc8",
+			"name": "/movies",
+			"url": "http://localhost:5000/movies",
+			"time": 191,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movies array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movies array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movies array": true
+				}
+			]
+		},
+		{
+			"id": "98af2039-b7d3-4eef-81aa-6f9916a8ced2",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/1",
+			"time": 195,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movie object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movie object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				195
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movie object": true
+				}
+			]
+		},
+		{
+			"id": "1e695a5c-ef56-4c94-a2f4-7db414fe5347",
+			"name": "/actors",
+			"url": "http://localhost:5000/actors",
+			"time": 337,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actor array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actor array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				337
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actor array": true
+				}
+			]
+		},
+		{
+			"id": "51e0e939-0557-461e-87dc-a67493a8dd67",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/1",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actor object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actor object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actor object": true
+				}
+			]
+		},
+		{
+			"id": "f4203cce-cf4c-4024-8be8-c4ba3cea2c8f",
+			"name": "/movies",
+			"url": "http://localhost:5000/movies",
+			"time": 210,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				210
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "950ce9ab-9f35-498f-aeed-77cd21313728",
+			"name": "/actors",
+			"url": "http://localhost:5000/actors",
+			"time": 201,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "bf86d079-5519-495a-b443-be5a99f4a7bb",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/6",
+			"time": 208,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains movie array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains movie array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				208
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains movie array": true
+				}
+			]
+		},
+		{
+			"id": "b3e5e664-0487-46f0-a1c7-6d5067cdee19",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/7",
+			"time": 212,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains actor array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains actor array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				212
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains actor array": true
+				}
+			]
+		},
+		{
+			"id": "3937eec6-4758-4a78-a55e-d5db4c122d6c",
+			"name": "/movies/id",
+			"url": "http://localhost:5000/movies/6",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				205
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "fb51758e-ca70-43a6-ac11-68a750102291",
+			"name": "/actors/id",
+			"url": "http://localhost:5000/actors/7",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				199
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 6502,
+	"collection": {
+		"requests": [
+			{
+				"id": "531670de-22a7-4419-b83d-849b750ae7a9",
+				"method": "GET"
+			},
+			{
+				"id": "df3f29c1-2161-42c4-b292-30087d5f3da8",
+				"method": "GET"
+			},
+			{
+				"id": "c936a5cc-9384-4006-8d8f-74f71df78ca7",
+				"method": "GET"
+			},
+			{
+				"id": "107ebf74-7cea-4e7e-bd2d-c5665b2a4aa7",
+				"method": "GET"
+			},
+			{
+				"id": "081540a8-40ec-400b-beea-b6e25b9ab0ba",
+				"method": "POST"
+			},
+			{
+				"id": "e73f9717-b18d-405d-ba06-ee924b19a552",
+				"method": "POST"
+			},
+			{
+				"id": "968b1f4a-10fb-454b-b865-e0358590e417",
+				"method": "PATCH"
+			},
+			{
+				"id": "0117da50-b094-4652-87d6-9af6fbea8e26",
+				"method": "PATCH"
+			},
+			{
+				"id": "af53ed1a-b73c-4491-a26b-c414308aae62",
+				"method": "DELETE"
+			},
+			{
+				"id": "6259d967-04f6-4016-a6c6-a94e6895e69c",
+				"method": "DELETE"
+			},
+			{
+				"id": "5289be63-a0be-493a-b109-f5564d59b7c7",
+				"method": "GET"
+			},
+			{
+				"id": "a7ebc1ce-cb6c-4a2d-8405-7ca5b5d0efe4",
+				"method": "GET"
+			},
+			{
+				"id": "08322625-30f2-4ae9-b637-09c56795f908",
+				"method": "GET"
+			},
+			{
+				"id": "baebdfcf-72df-404c-a5cc-49da6670b6f8",
+				"method": "GET"
+			},
+			{
+				"id": "a63c642d-c0b5-4ddc-b3ab-c07b0a97c45e",
+				"method": "POST"
+			},
+			{
+				"id": "b8a7b583-13d4-44cc-840a-0f3c8bab5e78",
+				"method": "POST"
+			},
+			{
+				"id": "7e7460d3-3916-4391-87ab-da4454fedcd7",
+				"method": "PATCH"
+			},
+			{
+				"id": "05e7c33e-21c3-4795-9481-342f59d78b6e",
+				"method": "PATCH"
+			},
+			{
+				"id": "64d376e0-c17f-4827-abe3-f02762bdd262",
+				"method": "DELETE"
+			},
+			{
+				"id": "7d3fe3e5-454a-4eb9-b9dc-31b9f4312f50",
+				"method": "DELETE"
+			},
+			{
+				"id": "6d2ca6c1-3a42-4124-a0bf-8bfab9caebc8",
+				"method": "GET"
+			},
+			{
+				"id": "98af2039-b7d3-4eef-81aa-6f9916a8ced2",
+				"method": "GET"
+			},
+			{
+				"id": "1e695a5c-ef56-4c94-a2f4-7db414fe5347",
+				"method": "GET"
+			},
+			{
+				"id": "51e0e939-0557-461e-87dc-a67493a8dd67",
+				"method": "GET"
+			},
+			{
+				"id": "f4203cce-cf4c-4024-8be8-c4ba3cea2c8f",
+				"method": "POST"
+			},
+			{
+				"id": "950ce9ab-9f35-498f-aeed-77cd21313728",
+				"method": "POST"
+			},
+			{
+				"id": "bf86d079-5519-495a-b443-be5a99f4a7bb",
+				"method": "PATCH"
+			},
+			{
+				"id": "b3e5e664-0487-46f0-a1c7-6d5067cdee19",
+				"method": "PATCH"
+			},
+			{
+				"id": "3937eec6-4758-4a78-a55e-d5db4c122d6c",
+				"method": "DELETE"
+			},
+			{
+				"id": "fb51758e-ca70-43a6-ac11-68a750102291",
+				"method": "DELETE"
+			}
+		]
+	}
+}

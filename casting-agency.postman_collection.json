@@ -1,0 +1,1319 @@
+{
+	"info": {
+		"_postman_id": "3795a481-2302-4fc3-9dab-7d1f8cd8477d",
+		"name": "casting-agency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "casting assistant",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9826027b-ef0e-47ac-8cb7-2f91345469ea",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "28f2d050-a85a-4c04-b70b-334757e0eafb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba9750f7-85da-4871-91ea-7951521d3a76",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movie object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movie).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "196d9344-e1c2-4628-b934-dd53e0f2c221",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actor object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actor).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4bc5467a-c66a-4428-b4c9-431792d44967",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Interstellar\",\n    \"release_date\": 2016-05-24 00:00:00 \n}"
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f16d37a8-9468-4cf1-a0fa-9085080a14f4",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"George Clooney Sr\",\n    \"age\": 59,\n    \"gender\": \"M\",\n    \"movie\": 5\n}"
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "768fa0be-eef9-4533-ace7-ad8d4df97a91",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Interstellar 2\",\n    \"release_date\": \"2020-05-24 00:00:00\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6dfa21af-9217-4347-9aa9-dae337a6d4ec",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"George Clooney Sr\",\n    \"age\": 59,\n    \"gender\": \"M\",\n    \"movie\": 5\n}"
+						},
+						"url": {
+							"raw": "{{host}}/actors/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "493d7cfd-cee2-44bc-8b4b-093bc8235f8d",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2804c1e3-67dd-49ce-a9c8-4d4c065de830",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBOYzRWcFhHaU9IT3A4ZThvUXl5bSJ9.eyJpc3MiOiJodHRwczovL2Rldi02ancwdzJjdS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWY2NzljYTU4MTU1MWYwMDZlNDE3M2MxIiwiYXVkIjoiY2FzdGluZy1hZ2VuY3kiLCJpYXQiOjE2MDA3MTQ0OTAsImV4cCI6MTYwMDgwMDg5MCwiYXpwIjoiYklUSkdLUUVMUFRIU3ZlU0R1TWd0SW5yNDdBSjJ2dDUiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiXX0.LhiSzvtkxBwHAXyaZkDbefRBudhVZfT173dW08rzUaZsuOxJlXNSkKUC3sVRi5-1ggvNXgJDauRkDGmRqoIrWCEINj66-Dl2ExnSzW_33fJVMhPJuL8OTwg2eWuBsFPJp2uWPOJ3AbpeSksdZAASEkx88c7d1MCzVJ5FH9BspMJQ5xk6QC10j7Ej_2v-YM16wD_MiCjCCVVRRPPoVVoNL5F3SdaOLZjClLAQlm7l78MmpevzPTgi5N1JY89n0_vvY7pJ7bIOfUwnAaO9o7G8Uvcz0VvyfshiOOsvPGbmzucrs5HqcntKLAscIJoDqPBc1lV_QpvdlSYoKnOz38fIuQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5031d57d-95b8-41cb-b692-b5ce46c21465",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cea879d2-1461-4adc-9a65-b9138a264c89",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "casting director",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3af1874d-60ff-45c7-8371-cfe436fd39ee",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "45ec132f-e2c3-4fbd-acc3-efcd64409282",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7c79cc96-c283-4ed1-9a33-973ee1e90910",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actor object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actor).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1c700bd9-792d-44d4-84ce-184776c2fe82",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movie object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movie).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2994a1b-75f0-4629-86c4-7e9c1a5652c0",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Interstellar\",\n    \"release_date\": \"2016-05-24 00:00:00\" \n}"
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3c74c60-991a-4189-92b9-1f532184cd9a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"George Clooney\",\n    \"age\": 59,\n    \"gender\": \"M\",\n    \"movie\": 5\n}"
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "27857c1a-57c1-4161-a9b9-d5fc88f30c7a",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Interstellar 2\",\n    \"release_date\": \"2020-05-24 00:00:00\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e84cb2a-004a-4326-8fe0-8d02827cf4a2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains acotr array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actor).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"George Clooney Sr\",\n    \"age\": 59,\n    \"gender\": \"M\",\n    \"movie\": 5\n}"
+						},
+						"url": {
+							"raw": "{{host}}/actors/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b12e2516-3760-4f20-a20c-7539e863a9be",
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d270462-70d9-44ae-af91-97b4a3e8f3e8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBOYzRWcFhHaU9IT3A4ZThvUXl5bSJ9.eyJpc3MiOiJodHRwczovL2Rldi02ancwdzJjdS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWY2NzljZjFiYmJkODIwMDY4Njg5YzNkIiwiYXVkIjoiY2FzdGluZy1hZ2VuY3kiLCJpYXQiOjE2MDA3MTQ2MjIsImV4cCI6MTYwMDgwMTAyMiwiYXpwIjoiYklUSkdLUUVMUFRIU3ZlU0R1TWd0SW5yNDdBSjJ2dDUiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJwb3N0OmFjdG9ycyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.Eb0zqL8L4vCHZGOwskKeTgI8MRLzI9Lh1NJh7qnlruVhuWulx9VwnYc3imBkVDHv0HLVvmBOr_KsAgyy-oGcRPCLT9M1_6SHkp9WUZlStjwi2pCDuTV6Qgcl0bizp7sc9QUhqtHG_KGsv4LauhspWVZcR2EvHniA-3zk9KpW21AWT8kkXRW5_nKhtiXsvq_FvWezPWZ2VKqXwPLluPqxygQmVI97Kv4vOkwRTJtKUj8e2VPQi64VQJoo8uNQE74HHXntUHbUFJRtiH7Fe-W97Xch6i9kyaMgrkyqcAyjM9M1VnrqxCWhpNquIOuo5QXrUY-F6q1b2LdCj7HU8gBlDA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "72f6aec5-08cd-4efd-8142-5e28c4e82010",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe483233-9ced-4c92-872c-b788b9bfe97c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "executive director ",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ebaaf67-c303-4db9-90e0-1bacd1818522",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "17c6fdc9-8067-4015-a1c6-5ecacc2d3301",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movie object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movie).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "230b9b23-26db-477e-97d5-40637555bc03",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actor array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e992855-d335-4b44-bb72-e6481322fb68",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actor object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actor).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "de06d41f-81f7-4334-81fa-e817a649f29c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Interstellar\",\n    \"release_date\": \"2016-05-24 00:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "48e5bb3b-ee00-40b7-b30d-edea6a3202c3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"George Clooney\",\n    \"age\": 59,\n    \"gender\": \"M\",\n    \"movie\": 5\n}"
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c5c5a3ae-a158-4d25-b64e-16176389b5c3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movie array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movie).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Interstellar 2\",\n    \"release_date\": \"2020-05-24 00:00:00\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e08a5051-5f38-4f4f-9496-bc3e0361a1d6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actor array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actor).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"George Clooney Sr\",\n    \"age\": 59,\n    \"gender\": \"M\",\n    \"movie\": 5\n}"
+						},
+						"url": {
+							"raw": "{{host}}/actors/7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "705e8946-759b-46d5-9870-b771f539ebd9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1df7d83a-9a25-452d-ad3d-c21ff2cef894",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors/7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBOYzRWcFhHaU9IT3A4ZThvUXl5bSJ9.eyJpc3MiOiJodHRwczovL2Rldi02ancwdzJjdS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWY2NzlkMjBiNDk4ZTIwMDZiOTJkZDM4IiwiYXVkIjoiY2FzdGluZy1hZ2VuY3kiLCJpYXQiOjE2MDA3MTQ3MjIsImV4cCI6MTYwMDgwMTEyMiwiYXpwIjoiYklUSkdLUUVMUFRIU3ZlU0R1TWd0SW5yNDdBSjJ2dDUiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.GkQLzDtN3oc6op6Za0mWfg5k30tAHchq72JaNmtgZEcj5Os_olfVxab2HXca2X0w0pzQc2xH6YPGC3MAEoM0X2QcK_uY0ROiJ0ZXfrwcTE1dnxAj6ANLfq9ZAsf7zIcEzLxyDR94LlUkSI032mcoEHzaf-2Hg0zxMRxkF1I0nbOJp66tocBmLRMT3WtaQhZrBfMsco31lmvAQwh8jFmJTHLIUa3BiLLm0yqSBieJCNF3yqhhycwbPtnl6afFn3ojr6H5DdeafhdSLPu3POqvRSaF8rCv0tTPnfurmm_zmebJOIji4vZYV_8fLWCLtcwWRWngrADfstI9PcPoKhw8qg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "86434ca5-ecd6-4d8f-8c58-e1f9c43bfac1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "da4fe188-273d-42b7-b32b-b7a552987f9a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "733027b5-54fa-48ef-8eaa-e51aba18a730",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5c6d94c3-6ef2-4b3a-a9f9-7f8761325301",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "36b24345-ed21-4a9f-8b4a-1f7edd6df272",
+			"key": "host",
+			"value": "localhost:5000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
