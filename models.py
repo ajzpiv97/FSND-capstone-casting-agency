@@ -2,16 +2,15 @@ from sqlalchemy import ForeignKey, Column, String, Integer, \
     DateTime, create_engine
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
-import os
+from os import environ
 from flask_migrate import Migrate
-
-database_path = os.environ['DATABASE_URL']
-db = SQLAlchemy()
 
 '''
 setup_db(app)
         binds a flask application and a SQLAlchemy service
 '''
+db = SQLAlchemy()
+database_path = environ.get('DATABASE_URL')
 
 
 def setup_db(app, database_path=database_path):
