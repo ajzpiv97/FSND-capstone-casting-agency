@@ -83,8 +83,11 @@ def create_app(test_config=None):
         if not ('title' in body and 'release_date' in body):
             abort(422)
 
-        new_title = body.get('title')
-        new_release_date = body.get('release_date')
+        new_title = body.get('title', None)
+        new_release_date = body.get('release_date', None)
+
+        if new_title is None or new_release_date is None:
+            abort(400)
 
         try:
             movie = Movies(title=new_title, release_date=new_release_date)
@@ -109,10 +112,13 @@ def create_app(test_config=None):
         if not ('name' in body and 'age' in body, 'gender' in body and 'movie' in body):
             abort(422)
 
-        new_name = body.get('name')
-        new_age = body.get('age')
-        new_gender = body.get('gender')
-        new_movie = body.get('movie')
+        new_name = body.get('name', None)
+        new_age = body.get('age', None)
+        new_gender = body.get('gender', None)
+        new_movie = body.get('movie', None)
+
+        if new_name is None or new_age is None or new_gender is None:
+            abort(400)
 
         try:
             actor = Actors(name=new_name, age=new_age, gender=new_gender, movie_id=new_movie)
@@ -128,7 +134,7 @@ def create_app(test_config=None):
 
         except AttributeError:
             abort(422)
-            
+
     @app.route('/movies/<int:id>', methods=['DELETE'])
     @requires_auth('delete:movies')
     def delete_movie(payload, id):
@@ -143,7 +149,7 @@ def create_app(test_config=None):
 
         return jsonify({
             'success': True,
-            'delete': [movie.id]
+            'deleted': movie.id
         })
 
     @app.route('/actors/<int:id>', methods=['DELETE'])
@@ -160,7 +166,7 @@ def create_app(test_config=None):
 
         return jsonify({
             'success': True,
-            'delete': [actor.id]
+            'deleted': actor.id
         })
 
     @app.route('/movies/<int:id>', methods=['PATCH'])
@@ -186,7 +192,7 @@ def create_app(test_config=None):
 
         return jsonify({
             'success': True,
-            'movie': [movie.format()]
+            'movie': movie.format()
         })
 
     @app.route('/actors/<int:id>', methods=['PATCH'])
@@ -219,12 +225,10 @@ def create_app(test_config=None):
 
         return jsonify({
             'success': True,
-            'actor': [actor.format()]
+            'actor': actor.format()
         })
 
-
-
-# Error Handling
+    # Error Handling
     @app.errorhandler(404)
     def not_found(error):
         return jsonify({
