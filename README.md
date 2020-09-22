@@ -140,14 +140,14 @@ https://{{YOUR_DOMAIN}}/authorize?audience={{API_IDENTIFIER}}&response_type=toke
     ```
 **Note:** For default postgres installation, default user name is `postgres` with no password. Thus, no need to speficify them in database path. You can also omit host and post (localhost:5432). But if you need, you can use this template:
 
-```
-postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
-```
+    ```
+    postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
+    ```
 For more details [look at the documentation (31.1.1.2. Connection URIs)](https://www.postgresql.org/docs/9.3/libpq-connect.html)
 
 4. Setup the environment variables for Auth0 under `setup.sh` running:
-	```bash
-     sudo chmod -R 777 setup.sh 
+    ```bash
+    sudo chmod -R 777 setup.sh 
 	./setup.sh 
 	```
 5.  To run the server locally, execute:
@@ -388,20 +388,27 @@ The API will return three error types when requests fail:
 * Requires the title and release date.
 
 * **Example Request:** (Create)
- ``` bash
-	curl --location --request POST 'http://localhost:5000/movies' \
-		--header 'Content-Type: application/json' \
-		--data-raw '{
-			"title": "Pek Yakında",
-			"release_date": "19-02-2020"
-		}'
+``` bash
+curl --location --request POST 'https://fsnd-casting-agency2020.herokuapp.com/movies' \
+--header 'Authorization: Bearer $EXECUTIVE --header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "Interstellar",
+    "release_date": "2016-05-24 00:00:00"
+}'
 ```
     
 * **Example Response:**
-``` bash
-	{
-        "success": true
-	}
+``` json
+{
+    "movie": {
+        "actors": [],
+        "id": 7,
+        "release_date": "Tue, 24 May 2016 00:00:00 GMT",
+        "title": "Interstellar"
+    },
+    "success": true,
+    "total_movies": 6
+}
 ```
 
 #### POST /actors
@@ -412,52 +419,63 @@ The API will return three error types when requests fail:
 * Requires the name, age and gender of the actor.
 
 * **Example Request:** (Create)
- ``` json
-	curl --location --request POST 'http://localhost:5000/actors' \
-		--header 'Content-Type: application/json' \
-		--data-raw '{
-			"name": "Cem Yılmaz",
-			"age": "45",
-			"gender": "M"
-        }'
+ ``` bash
+curl --location --request POST 'https://fsnd-casting-agency2020.herokuapp.com/actors' \
+--header 'Authorization: Bearer $EXECUTIVE --header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "George Clooney",
+    "age": 59,
+    "gender": "M",
+    "movie": 5
+}'
 ```
     
 * **Example Response:**
-    ```json
-	{
-		"success": true
-    }
-    ```
+``` json
+{
+    "actor": {
+        "age": 59,
+        "gender": "M",
+        "id": 7,
+        "movie_id": 5,
+        "name": "George Clooney"
+    },
+    "success": true,
+    "total_actors": 6
+}
+```
 
 #### DELETE /movies/<int:movie_id>
 * Deletes the movie with given id 
 
 * Require `delete:movies` permission
 
-* **Example Request:** `curl --request DELETE 'http://localhost:5000/movies/1'`
+* **Example Request:** `curl --location --request DELETE 'https://fsnd-casting-agency2020.herokuapp.com/movies/5' \
+                        --header 'Authorization: Bearer $EXECUTIVE --data-raw ''`
 
 * **Example Response:**
-    ```json
-	{
-		"deleted": 1,
-		"success": true
-    }
-    ```
+``` json
+{
+    "deleted": 5,
+    "success": true
+}
+```
     
 #### DELETE /actors/<int:actor_id>
 * Deletes the actor with given id 
 
 * Require `delete:actors` permission
 
-* **Example Request:** `curl --request DELETE 'http://localhost:5000/actors/1'`
+* **Example Request:** `curl --location --request DELETE 'https://fsnd-casting-agency2020.herokuapp.com/actors/5' \
+                        --header 'Authorization: Bearer $EXECUTIVE --data-raw ''`
 
 * **Example Response:**
-    ```json
-	{
-		"deleted": 1,
-		"success": true
-    }
-    ```
+``` json
+{
+    "deleted": 5,
+	"success": true
+}
+```
 
 #### PATCH /movies/<movie_id>
 * Updates the movie where <movie_id> is the existing movie id
@@ -469,25 +487,35 @@ The API will return three error types when requests fail:
 * Update the corresponding fields for Movie with id <movie_id>
 
 * **Example Request:** 
-	```json
-    curl --location --request PATCH 'http://localhost:5000/movies/1' \
-		--header 'Content-Type: application/json' \
-		--data-raw '{
-			"title": "Eyvah eyvah 2"
-        }'
-  ```
+``` bash
+curl --location --request DELETE 'https://fsnd-casting-agency2020.herokuapp.com/actors/5' \
+--header 'Authorization: Bearer $EXECUTIVE --header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "Interstellar 2",
+    "release_date": "2020-05-24 00:00:00" 
+}'
+```
   
 * **Example Response:**
-    ```json
-	{
-		"success": true, 
-		"updated": {
-			"id": 1, 
-			"release_date": "Wed, 04 May 2016 00:00:00 GMT", 
-			"title": "Eyvah eyvah 2"
-		}
-    }
-    ```
+``` json
+{
+    "movie": {
+        "actors": [
+            {
+                "age": 56,
+                "gender": "\"M\"",
+                "id": 2,
+                "movie_id": 2,
+                "name": "\"Brad Pitt\""
+            }
+        ],
+        "id": 2,
+        "release_date": "Sun, 24 May 2020 00:00:00 GMT",
+        "title": "Interstellar 2"
+    },
+    "success": true
+}
+```
 	
 #### PATCH /actors/<actor_id>
 * Updates the actor where <actor_id> is the existing actor id
@@ -499,23 +527,28 @@ The API will return three error types when requests fail:
 * Update the given fields for Actor with id <actor_id>
 
 * **Example Request:** 
-	```json
-    curl --location --request PATCH 'http://localhost:5000/actors/1' \
-		--header 'Content-Type: application/json' \
-		--data-raw '{
-			"name": "Tom Hanks"
-        }'
-  ```
+```bash
+curl --location --request PATCH 'https://fsnd-casting-agency2020.herokuapp.com/actors/2' \
+--header 'Authorization: Bearer $EXECUTIVE \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "George Clooney Sr",
+    "age": 59,
+    "gender": "M",
+    "movie": 2
+}' 
+```
   
 * **Example Response:**
-    ```json
-	{
-		"success": true, 
-		"updated": {
-			"age": 54, 
-			"gender": "M", 
-			"id": 1, 
-			"name": "Tom Hanks"
-		}
-	}
-	```
+ ``` json
+ {
+    "actor": {
+        "age": 59,
+        "gender": "M",
+        "id": 2,
+        "movie_id": 2,
+        "name": "George Clooney Sr"
+    },
+    "success": true
+}
+```
