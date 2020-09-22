@@ -1,9 +1,9 @@
---COPY movies (id, title, release_date) FROM stdin;
---2	"Fight Club"	1999-10-15 00:00:00
---3	"The Avengers"	2010-05-14 00:00:00
---4	"The Martian"	2019-09-11 00:00:00
---5	"Ocean's Eleven"	2001-12-07 00:00:00
---1	"Saving Private Ryan"	1998-07-24 00:00:00
+COPY movies (id, title, release_date) FROM stdin;
+2	"Fight Club"	1999-10-15 00:00:00
+3	"The Avengers"	2010-05-14 00:00:00
+4	"The Martian"	2019-09-11 00:00:00
+5	"Ocean's Eleven"	2001-12-07 00:00:00
+1	"Saving Private Ryan"	1998-07-24 00:00:00
 \.
 
 
